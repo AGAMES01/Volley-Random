@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://files.twoplayergames.org/files/games/o1/Volley_random/index.html -->
+<html style="--construct-scale: 5.068421052631579;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Volley Random</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+
+	<meta content="Scirra Construct" name="generator">
+
+	<link href="https://files.twoplayergames.org/files/games/o1/Volley_random/appmanifest.json" rel="manifest">
+	<link href="./index_files/style.css" rel="stylesheet">
+
+	<script>
+		window.addEventListener("keydown", function (e) {
+			// space and arrow keys
+			if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+				e.preventDefault();
+			}
+		}, false);
+	</script>
+
+	<script async="" crossorigin="anonymous" data-ad-client="ca-pub-8349441957149316" data-ad-channel="9081772380" data-ad-frequency-hint="30s" src="./index_files/f.txt">
+	</script>
+
+	<script>
+		window.adsbygoogle = window.adsbygoogle || [];
+		const adBreak = adConfig = function (o) {
+			adsbygoogle.push(o);
+		}
+
+		function initSDK() {
+			// Game start logic
+			let adConfigPromise =
+					new Promise((resolve, reject) => adConfig({
+						preloadAdBreaks: 'on',
+						onReady: () => resolve(true)
+					}));
+			let timeoutPromise =
+					new Promise((resolve, reject) => {
+						setTimeout(() => {
+							console.log("Ad timeout");
+							resolve(false);
+						}, 2000);
+					});
+			// Whatever happens first resolves this promise.
+			Promise.race([
+				adConfigPromise,
+				timeoutPromise
+			]).then((shouldShowPreRoll) => {
+				if (shouldShowPreRoll) {
+					showPreRoll();
+				} else {
+					c3_callFunction("startGame");
+				}
+			});
+		}
+
+		function showPreRoll() {
+			// Show ad
+			//adBreak({
+			//	type: 'start',
+			//	adBreakDone: function () {
+					c3_callFunction("startGame");
+			//	}, // always called, unblocks the game logic
+			//});
+		}
+
+		function CallInterstitialAds() {
+			adBreak({
+				type: 'next',
+				name: 'restart-game',
+				beforeAd: () => {
+					c3_callFunction("adStarted");
+				},
+				afterAd: () => {
+					c3_callFunction("onClose");
+				},
+				adBreakDone: () => {
+					c3_callFunction("onClose");
+				}
+			});
+		}
+	</script>
+
+<script type="module" src="./index_files/c3runtime.js.download"></script><script type="module" src="./index_files/FrameRateLimit.js.download"></script><script type="module" src="./index_files/scriptsInEvents.js.download"></script></head>
+<body>
+<script>
+	if (location.protocol.substr(0, 4) === "file") {
+		alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+	}
+</script>
+<script src="./index_files/box2d.wasm.js.download"></script>
+<noscript>
+	<div id="notSupportedWrap">
+		<h2 id="notSupportedTitle">This content requires JavaScript</h2>
+		<p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+	</div>
+</noscript>
+<script src="./index_files/supportcheck.js.download"></script>
+<script src="./index_files/offlineclient.js.download" type="module"></script>
+<script src="./index_files/main.js.download" type="module"></script>
+<script src="./index_files/register-sw.js.download" type="module"></script>
+
+<canvas style="width: 1920px; height: 963px; margin-left: 0px; margin-top: 0px;" width="1920" height="963"></canvas></body></html>
